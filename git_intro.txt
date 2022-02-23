@@ -1,7 +1,0 @@
-//Intro to Git
-
-1. Login
-2. Generate Key
-3. Upload
-4. Clone Repo
-5. Git config username

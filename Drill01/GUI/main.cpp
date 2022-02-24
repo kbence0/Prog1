@@ -46,6 +46,14 @@ int main()
 
 	Rectangle r {Point{xmax-200,ymax-100}, 200, 100};
 
+	//polygon
+	Polygon poly;
+	poly.add(Point{xmax-200,ymax-100});
+	poly.add(Point{xmax-250,ymax-200});
+	poly.add(Point{xmax-300,ymax-100});
+
+	poly.set_fill_color(Color::yellow);
+
 	r.set_fill_color(Color::blue);
 	r.set_style(Line_style(Line_style::dash, 4));
 
@@ -70,6 +78,9 @@ int main()
 	win.attach(cos_func);
 	win.attach(x);
 	win.attach(y);
+
+	win.attach(poly);
+
 
     win.wait_for_button();
 

@@ -38,6 +38,8 @@ private:
 	void blue_pressed() {change(Color::blue); hide_menu();}
 	void black_pressed() {change(Color::black); hide_menu();}
 	void menu_pressed() {menu_button.hide(); color_menu.show();}
+
+	
 	
 	//4.
 	void solid_pressed() {changel(Line_style::solid); hide_line_menu();}

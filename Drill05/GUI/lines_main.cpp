@@ -6,7 +6,7 @@
 
 int main()
 {
-    Lines_window win {Point{100,100}, 1920, 1080, "Lines"};
+    Lines_window win {Point{100,100}, 800, 600, "Lines"};
     
     return gui_main();
 }

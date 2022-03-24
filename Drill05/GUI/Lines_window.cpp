@@ -11,12 +11,12 @@ Lines_window::Lines_window(Point xy, int w, int h, const string& title)
     xy_out{Point{100,0}, 100, 40, "current (x,y):"},
 
     //--
-    color_menu{Point{x_max()-80,50},150,40,Menu::vertical,"color"},
-    menu_button{Point{x_max()-80,50}, 150, 40, "color menu", cb_menu},
+    color_menu{Point{x_max()-150*2,50},150,40,Menu::vertical,"color"},
+    menu_button{Point{x_max()-150*2,50}, 150, 40, "color menu", [](Address, Address pw) {reference_to<Lines_window>(pw).menu_pressed();}},
 
     //4.
     line_menu{Point{x_max()-150,50},150,40,Menu::vertical,"Ln style"},
-    line_menu_button{Point{x_max()-150,50}, 150, 40, "line menu", cb_menu}
+    line_menu_button{Point{x_max()-150,50}, 150, 40, "line menu", [](Address, Address pw) {reference_to<Lines_window>(pw).line_menu_pressed();}}
     //--
 {
     attach(next_button);
@@ -26,17 +26,18 @@ Lines_window::Lines_window(Point xy, int w, int h, const string& title)
     attach(xy_out);
     //--
     xy_out.put("no point");
-    color_menu.attach(new Button{Point{0,0},0,0,"red",cb_red});
-    color_menu.attach(new Button{Point{0,0},0,0,"blue",cb_blue});
-    color_menu.attach(new Button{Point{0,0},0,0,"black",cb_black});
+    color_menu.attach(new Button{Point{0,0},0,0,"red",[](Address, Address pw) {reference_to<Lines_window>(pw).red_pressed();}});
+    color_menu.attach(new Button{Point{0,0},0,0,"blue",[](Address, Address pw) {reference_to<Lines_window>(pw).blue_pressed();}});
+    color_menu.attach(new Button{Point{0,0},0,0,"black",[](Address, Address pw) {reference_to<Lines_window>(pw).black_pressed();}});
+
     attach(color_menu);
     color_menu.hide();
     attach(menu_button);
 
     //4.
-    line_menu.attach(new Button{Point{0,0},0,0,"solid",cb_solid});
-    line_menu.attach(new Button{Point{0,0},0,0,"dash",cb_dash});
-    line_menu.attach(new Button{Point{0,0},0,0,"dot",cb_dot});
+    line_menu.attach(new Button{Point{0,0},0,0,"solid",[](Address, Address pw) {reference_to<Lines_window>(pw).solid_pressed();}});
+    line_menu. attach(new Button{Point{0,0},0,0,"dash",[](Address, Address pw) {reference_to<Lines_window>(pw).dash_pressed();}});
+    line_menu. attach(new Button{Point{0,0},0,0,"dot",[](Address, Address pw) {reference_to<Lines_window>(pw).dot_pressed();}});
     attach(line_menu);
     line_menu.hide();
     attach(line_menu_button);

@@ -10,11 +10,11 @@ Lines_window::Lines_window(Point xy, int w, int h, const string& title)
     next_y{Point{450,0}, 50, 40, "next y:"},
     xy_out{Point{100,0}, 100, 40, "current (x,y):"},
 
-    //new
+    //--
     color_menu{Point{x_max()-80,50},150,40,Menu::vertical,"color"},
     menu_button{Point{x_max()-80,50}, 150, 40, "color menu", cb_menu},
 
-    //3.
+    //4.
     line_menu{Point{x_max()-150,50},150,40,Menu::vertical,"Ln style"},
     line_menu_button{Point{x_max()-150,50}, 150, 40, "line menu", cb_menu}
     //--
@@ -24,7 +24,7 @@ Lines_window::Lines_window(Point xy, int w, int h, const string& title)
     attach(next_x);
     attach(next_y);
     attach(xy_out);
-    //new
+    //--
     xy_out.put("no point");
     color_menu.attach(new Button{Point{0,0},0,0,"red",cb_red});
     color_menu.attach(new Button{Point{0,0},0,0,"blue",cb_blue});
@@ -33,7 +33,7 @@ Lines_window::Lines_window(Point xy, int w, int h, const string& title)
     color_menu.hide();
     attach(menu_button);
 
-    //3.
+    //4.
     line_menu.attach(new Button{Point{0,0},0,0,"solid",cb_solid});
     line_menu.attach(new Button{Point{0,0},0,0,"dash",cb_dash});
     line_menu.attach(new Button{Point{0,0},0,0,"dot",cb_dot});

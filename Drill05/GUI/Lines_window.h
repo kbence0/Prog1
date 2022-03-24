@@ -18,7 +18,7 @@ private:
 
 	Out_box xy_out;
 
-	//new
+	//--
 	Menu color_menu;
 	Button menu_button;
 	//3.
@@ -26,21 +26,20 @@ private:
 	Button line_menu_button;
 
 	void change(Color c){lines.set_color(c);}
-	//3.
+	//4.
 	void changel(Line_style l){lines.set_style(l);}
 	
 	void hide_menu() {color_menu.hide(); menu_button.show();}
 	
-	//3.
+	//4.
 	void hide_line_menu() {line_menu.hide(); line_menu_button.show();}
 
-	//actions invoked by callbacks
 	void red_pressed() {change(Color::red); hide_menu();}
 	void blue_pressed() {change(Color::blue); hide_menu();}
 	void black_pressed() {change(Color::black); hide_menu();}
 	void menu_pressed() {menu_button.hide(); color_menu.show();}
 	
-	//3.
+	//4.
 	void solid_pressed() {changel(Line_style::solid); hide_line_menu();}
 	void dash_pressed() {changel(Line_style::dash); hide_line_menu();}
 	void dot_pressed() {changel(Line_style::dot); hide_line_menu();}
@@ -51,7 +50,6 @@ private:
 	void quit();
 	//----------
 	
-	//callback functions
 	static void cb_red(Address,Address);
 	static void cb_blue(Address,Address);
 	static void cb_black(Address,Address);
@@ -59,7 +57,7 @@ private:
 	static void cb_next(Address,Address);
 	static void cb_quit(Address,Address);
 
-	//3.
+	//4.
 	static void cb_solid(Address,Address);
 	static void cb_dash(Address,Address);
 	static void cb_dot(Address,Address);

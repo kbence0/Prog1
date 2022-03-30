@@ -93,7 +93,6 @@ int main()
 	{
 		if (frp == "end")
 		{
-			cout << "Huba buba";
 			break;
 		}
 		cout<<frp.fname();

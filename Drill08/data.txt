@@ -1,0 +1,10 @@
+zero 0 0
+one 1 1
+two 2 2
+three 3 4
+four 4 8 
+five 5 16
+six 6 32
+seven 7 64
+eight 8 128
+nine 9 256

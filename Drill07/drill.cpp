@@ -33,7 +33,6 @@ void Add(T& array, int amount)
     {
         i+=amount;
     }
-    
 }
 
 int main()

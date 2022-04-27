@@ -51,7 +51,7 @@ public:
 	string tx = "text";
 	void pvf()
 	{
-		cout << tx;
+		cout << tx << endl;
 	};
 };
 
@@ -88,8 +88,6 @@ int main()
 	//refclass.vf();
 	//refclass.f();
 */
-
-
 	D2 d2obj;
 
 	d2obj.f();

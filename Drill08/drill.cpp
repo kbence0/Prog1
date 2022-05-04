@@ -13,8 +13,6 @@ struct Item
 		iid = iden;
 		value = val;
 	};
-
-
 };
 
 class rmn
@@ -25,6 +23,12 @@ public:
 	bool operator()(const Item& itm) const{return itm.name == st;};
 };
 
+/* VÉDÉS
+struct cmpName
+{
+	bool operator()(const Item& it, const Item& itv) const {return it.name < itv.name;};
+};
+*/
 class rmid
 {
 	int v;
@@ -69,12 +73,15 @@ int main()
 
 	cout << endl << "------------" << endl << endl;
 	cout << "Sort by name:" << endl;
-
+	
 	sort(vi.begin(),vi.end(),[](const Item& it, const Item& itv)
 	{
 		return it.name < itv.name;
 	});
-
+	
+	//VÉDÉS
+	//sort(vi.begin(),vi.end(),cmpName());
+	
 	for (Item i:vi)
 	{
 		cout << i.name << " " << i.iid << " " << i.value << " " << endl;
@@ -111,12 +118,14 @@ int main()
 
 	vi.push_back(Item("horse shoe",99,12.34));
 	vi.push_back(Item("Canon S400", 9988,499.95));
-
+	/*
 	sort(vi.begin(),vi.end(),[](const Item& it, const Item& itv)
 	{
 		return it.value > itv.value;
 	});
-
+	*/
+	
+	
 	for (Item i:vi)
 	{
 		cout << i.name << " " << i.iid << " " << i.value << " " << endl;
